@@ -43,7 +43,8 @@ set(SPARSE_SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/backed_block.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/sparse_crc32.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/sparse_err.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/sparse_read.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/android-base/stringprintf.cpp)
+	${CMAKE_CURRENT_SOURCE_DIR}/android-base/stringprintf.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/android-base/mapped_file.cpp)
 add_library(sparse STATIC ${SPARSE_SRC_FILES})
 target_link_libraries(sparse zlib)
 set_target_properties(sparse PROPERTIES
@@ -69,7 +70,8 @@ add_executable(img2simg ${IMG2SIMG_SRC_FILES})
 target_link_libraries(img2simg sparse)
 
 # Section: append2simg
-set(APPEND2SIMG_SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/append2simg.cpp)
+set(APPEND2SIMG_SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/append2simg.cpp
+		android-base/mapped_file.cpp)
 add_executable(append2simg ${APPEND2SIMG_SRC_FILES})
 target_link_libraries(append2simg sparse)
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "android-base/mapped_file.h"
+#include "mapped_file.h"
 
 #include <utility>
 
