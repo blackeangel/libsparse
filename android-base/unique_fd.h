@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <dirent.h>
 
 
 // DO NOT INCLUDE OTHER LIBBASE HEADERS HERE!
@@ -74,7 +75,7 @@ class unique_fd_impl final {
     return *this;
   }
 
-  [[clang::reinitializes]] void reset(int new_value = -1) { reset(new_value, nullptr); }
+void reset(int new_value = -1) { reset(new_value, nullptr); }
 
   int get() const { return fd_; }
 

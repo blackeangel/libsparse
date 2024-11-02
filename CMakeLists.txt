@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.20)
 
 project(libsparse)
 set(CMAKE_CXX_STANDARD 20)
-
+set(CMAKE_C_STANDARD 17)
 set(DEFAULT_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS_RELEASE "-O2")
+set(CMAKE_CXX_FLAGS_RELEASE "-pipe -O2 -s")
 
 
 set(BUILD_SHARED_LIBS OFF)
